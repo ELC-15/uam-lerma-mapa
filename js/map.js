@@ -59,19 +59,19 @@ const edificioP = L.polygon([
 }).addTo(map);
 edificioP.bindPopup("<b>Edificio P - Rectoría</b><br>Sede administrativa, tercer piso.");
 
-// Área verde (ejemplo)
+// Cancha de Deportes
 const canchaDeportes = L.polygon([
-  [19.2916257, -99.4999693],
+  [19.2916368, -99.5001452],
+  [19.2916325, -99.4999957],
+  //[19.2913795, -99.5000039],
+  //[19.2913838, -99.5001534],
+  //[19.2916257, -99.4999693],
   [19.2916248, -99.4998252],
   [19.2913824, -99.4998268],
-  [19.2913833, -99.4999710]
+  [19.2913838, -99.5001534]
+  //[19.2913833, -99.4999710]
+  
 
-
-
-  //[19.2919, -99.4998],
-  //[19.2919, -99.4996],
-  //[19.2917, -99.4996],
-  //[19.2917, -99.4998]
 ], {
   color: '#228B22', // Borde verde oscuro
   fillColor: '#32CD32', // Verde claro
@@ -79,12 +79,34 @@ const canchaDeportes = L.polygon([
   weight: 2
 }).addTo(map);
 canchaDeportes.bindPopup(`
-  <b>Cancha de Deportes UAM Lerma</b><br>
+  <b>Canchas de Deportes UAM Lerma</b><br>
   ⚽ Espacio para partidos de basquetball y voleyball.<br>
   - <b>Actividades:</b> Torneos internos, convivencias.<br>
   - <b>Horario:</b> Consultar área deportiva.<br>
   - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
 `);
+
+//Jardin de Ajedrez
+const jardinAjedrez = L.polygon([
+  [19.2917889, -99.5005522],
+  [19.2917970, -99.5004248],
+  [19.2914241, -99.5004287],
+  [19.2914292, -99.5005589]
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2
+}).addTo(map);
+jardinAjedrez.bindPopup(`
+  <b>Jardin de Ajedrez UAM Lerma</b><br>
+   Espacio para partidos jugar ajedrez.<br>
+  - <b>Actividades:</b> Torneos internos, convivencias.<br>
+  - <b>Horario:</b> Consultar área deportiva.<br>
+  - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
+`);
+
+
 // Estacionamiento
 const estacionamiento = L.polygon([
   [19.2918518, -99.5019823],
@@ -99,14 +121,6 @@ const estacionamiento = L.polygon([
   [19.2919094, -99.5016195],
   [19.2918955, -99.5019843],
   [19.2918518, -99.5019823]
-
-
-
-
-  //[19.2919, -99.4999],
-  //[19.2919, -99.4997],
-  //[19.2917, -99.4997],
-  //[19.2917, -99.4999]
 ], {
   color: '#808080', // Borde gris
   fillColor: '#D3D3D3', // Gris claro
@@ -136,6 +150,9 @@ const overlayMaps = {
   "Estacionamiento": estacionamiento,
   "Biblioteca": bibliotecaMarker,
   "Comedor": comedorMarker,
-  "Acceso Principal": accesoPrincipal
+  "Acceso Principal": accesoPrincipal,
+  "Jadín de Ajedrez": jardinAjedrez,
+
+   
 };
 L.control.layers({}, overlayMaps).addTo(map);
