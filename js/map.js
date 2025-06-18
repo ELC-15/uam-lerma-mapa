@@ -106,6 +106,28 @@ jardinAjedrez.bindPopup(`
   - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
 `);
 
+//Jardin de I-J
+
+
+const jardinIJ = L.polygon([
+  [19.2917957, -99.5007021],
+  [19.2917906, -99.5006539],
+  [19.2914308, -99.5006606],
+  [19.2914300, -99.5007063]
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2
+}).addTo(map);
+jardinIJ.bindPopup(`
+  <b>Área verde entre los edifico I- J </b><br>
+   Espacio para partidos jugar ajedrez.<br>
+  - <b>Actividades:</b> Torneos internos, convivencias.<br>
+  - <b>Horario:</b> Consultar área deportiva.<br>
+  - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
+`);
+
 
 // Estacionamiento
 const estacionamiento = L.polygon([
@@ -151,8 +173,7 @@ const overlayMaps = {
   "Biblioteca": bibliotecaMarker,
   "Comedor": comedorMarker,
   "Acceso Principal": accesoPrincipal,
-  "Jadín de Ajedrez": jardinAjedrez,
-
-   
+  "Jardín de Ajedrez": jardinAjedrez,
+  "Jardín I-J": jardinIJ,
 };
 L.control.layers({}, overlayMaps).addTo(map);
