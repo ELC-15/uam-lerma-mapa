@@ -128,6 +128,51 @@ jardinIJ.bindPopup(`
   - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
 `);
 
+//Jardín H-I
+
+
+const jardinHI = L.polygon([
+  [19.2917985, -99.5009348],
+  [19.2917975, -99.5008846],
+  [19.2914319, -99.5008888],
+  [19.2914358, -99.5009372]
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2
+}).addTo(map);
+jardinHI.bindPopup(`
+  <b>Área verde entre los edifico H-I </b><br>
+   Espacio para partidos jugar ajedrez.<br>
+  - <b>Actividades:</b> Torneos internos, convivencias.<br>
+  - <b>Horario:</b> Consultar área deportiva.<br>
+  - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
+`);
+
+//Zona V
+
+
+const zonaV = L.polygon([
+  [19.2911543, -99.4975112],
+  [19.2881778, -99.4976109],
+  [19.2882031, -99.4948563],
+  [19.2911467, -99.4948986],
+  [19.2911543, -99.4975112]
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2
+}).addTo(map);
+zonaV.bindPopup(`
+  <b>Zona de serpientes</b><br>
+   Área verde restringida por que alberga fauna silvestre, en especial serpientes.<br>
+  - <b>Actividades:</b> Ninguna.<br>
+  - <b>Horario:</b> Previa solicitud
+   en en J1.
+`);
+
 
 // Estacionamiento
 const estacionamiento = L.polygon([
@@ -175,5 +220,6 @@ const overlayMaps = {
   "Acceso Principal": accesoPrincipal,
   "Jardín de Ajedrez": jardinAjedrez,
   "Jardín I-J": jardinIJ,
+  "Jadín H-I": jardinHI,
 };
 L.control.layers({}, overlayMaps).addTo(map);
