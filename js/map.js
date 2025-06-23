@@ -5,39 +5,37 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// Cancha de fútbol
+// Cancha de Fútbol
 const canchaFutbol = L.polygon([
-  
-  
- 
-  [19.2912092, -99.4997623],
-  [19.2918121, -99.4997636],
-  [19.2918070, -99.4993183],
-  [19.2912019, -99.4993371]
-  
-  //[19.2918121, -99.4997636]
-  // [19.2916401, -99.4997674]
+  [19.29180755, -99.499745325], // Superior izquierda
+  [19.29180755, -99.499345325], // Superior derecha
+  [19.29120755, -99.499345325], // Inferior derecha
+  [19.29120755, -99.499745325]  // Inferior izquierda
 ], {
   color: '#228B22', // Borde verde oscuro
   fillColor: '#32CD32', // Verde césped
   fillOpacity: 0.7,
-  weight: 2
+  weight: 3, // Borde más definido
+  dashArray: '5, 5' // Línea discontinua para un estilo moderno
 }).addTo(map);
+
 canchaFutbol.bindPopup(`
   <b>Cancha de Fútbol UAM Lerma</b><br>
-  ⚽ Espacio para partidos de fútbol soccer y rápido.<br>
+  ⚽️ Espacio para partidos de fútbol soccer y rápido.<br>
   - <b>Actividades:</b> Torneos internos, convivencias.<br>
   - <b>Horario:</b> Consultar área deportiva.<br>
   - <b>Etiquetas OSM:</b> leisure=pitch, sport=soccer
 `);
-canchaFutbol.on('mouseover', function () {
-  this.setStyle({ fillOpacity: 0.9, weight: 3 });
-});
-canchaFutbol.on('mouseout', function () {
-  this.setStyle({ fillOpacity: 0.7, weight: 2 });
+
+canchaFutbol.on('mouseover', function() {
+  this.setStyle({ fillOpacity: 0.9, weight: 4 });
 });
 
-// Edificio P (Rectoría)
+canchaFutbol.on('mouseout', function() {
+  this.setStyle({ fillOpacity: 0.7, weight: 3 });
+});
+
+/* Edificio P (Rectoría)
 const edificioP = L.polygon([
   [19.2926376, -99.4968402],
   [19.2926151, -99.4952970],
@@ -57,120 +55,139 @@ const edificioP = L.polygon([
   fillOpacity: 0.5,
   weight: 2
 }).addTo(map);
-edificioP.bindPopup("<b>Edificio P - Rectoría</b><br>Sede administrativa, tercer piso.");
+edificioP.bindPopup("<b>Edificio P - Rectoría</b><br>Sede administrativa, tercer piso."); */
 
 // Cancha de Deportes
 const canchaDeportes = L.polygon([
-  [19.2916368, -99.5001452],
-  [19.2916325, -99.4999957],
-  //[19.2913795, -99.5000039],
-  //[19.2913838, -99.5001534],
-  //[19.2916257, -99.4999693],
-  [19.2916248, -99.4998252],
-  [19.2913824, -99.4998268],
-  [19.2913838, -99.5001534]
-  //[19.2913833, -99.4999710]
-  
-
+  [19.29168206, -99.50013926], // Superior izquierda
+  [19.29168206, -99.49983926], // Superior derecha
+  [19.29138206, -99.49983926], // Inferior derecha
+  [19.29138206, -99.50013926]  // Inferior izquierda
 ], {
   color: '#228B22', // Borde verde oscuro
   fillColor: '#32CD32', // Verde claro
-  fillOpacity: 0.6,
-  weight: 2
+  fillOpacity: 0.7, // Aumentamos opacidad para mejor visibilidad
+  weight: 3, // Borde un poco más grueso
+  dashArray: '5, 5' // Línea de borde discontinua para un estilo moderno
 }).addTo(map);
+
 canchaDeportes.bindPopup(`
   <b>Canchas de Deportes UAM Lerma</b><br>
-  ⚽ Espacio para partidos de basquetball y voleyball.<br>
+  ⚽ Espacio para partidos de básquetbol y voleibol.<br>
   - <b>Actividades:</b> Torneos internos, convivencias.<br>
   - <b>Horario:</b> Consultar área deportiva.<br>
   - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
 `);
 
-//Jardin de Ajedrez
+// Jardín de Ajedrez
 const jardinAjedrez = L.polygon([
-  [19.2917889, -99.5005522],
-  [19.2917970, -99.5004248],
-  [19.2914241, -99.5004287],
-  [19.2914292, -99.5005589]
+  [19.2918098, -99.50056115], // Superior izquierda
+  [19.2918098, -99.50042115], // Superior derecha
+  [19.2914098, -99.50042115], // Inferior derecha
+  [19.2914098, -99.50056115]  // Inferior izquierda
 ], {
   color: '#228B22', // Borde verde oscuro
   fillColor: '#32CD32', // Verde claro
-  fillOpacity: 0.6,
-  weight: 2
+  fillOpacity: 0.7, // Aumentamos opacidad para mejor visibilidad
+  weight: 3, // Borde más definido
+  dashArray: '5, 5' // Línea discontinua para un estilo moderno
 }).addTo(map);
+
 jardinAjedrez.bindPopup(`
-  <b>Jardin de Ajedrez UAM Lerma</b><br>
-   Espacio para partidos jugar ajedrez.<br>
+  <b>Jardín de Ajedrez UAM Lerma</b><br>
+  ♟️ Espacio para jugar ajedrez al aire libre.<br>
   - <b>Actividades:</b> Torneos internos, convivencias.<br>
   - <b>Horario:</b> Consultar área deportiva.<br>
-  - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
+  - <b>Etiquetas OSM:</b> leisure=park, sport=chess
 `);
 
-//Jardin de I-J
-
-
+// Jardín de I-J
 const jardinIJ = L.polygon([
-  [19.2917957, -99.5007021],
-  [19.2917906, -99.5006539],
-  [19.2914308, -99.5006606],
-  [19.2914300, -99.5007063]
+  [19.291791775, -99.500710725], // Superior izquierda
+  [19.291791775, -99.500650725], // Superior derecha
+  [19.291431775, -99.500650725], // Inferior derecha
+  [19.291431775, -99.500710725]  // Inferior izquierda
 ], {
   color: '#228B22', // Borde verde oscuro
   fillColor: '#32CD32', // Verde claro
-  fillOpacity: 0.6,
-  weight: 2
+  fillOpacity: 0.7, // Aumentamos opacidad para mejor visibilidad
+  weight: 3, // Borde más definido
+  dashArray: '5, 5' // Línea discontinua para un estilo moderno
 }).addTo(map);
+
 jardinIJ.bindPopup(`
-  <b>Área verde entre los edifico I- J </b><br>
-   Espacio para partidos jugar ajedrez.<br>
-  - <b>Actividades:</b> Torneos internos, convivencias.<br>
-  - <b>Horario:</b> Consultar área deportiva.<br>
-  - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
+  <b>Área verde entre los edificios I-J</b><br>
+  🌳 Espacio para actividades al aire libre y descanso.<br>
+  - <b>Actividades:</b> Convivencias, eventos culturales.<br>
+  - <b>Horario:</b> Abierto durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=park
 `);
 
-//Jardín H-I
-
-
+// Jardín H-I
 const jardinHI = L.polygon([
-  [19.2917985, -99.5009348],
-  [19.2917975, -99.5008846],
-  [19.2914319, -99.5008888],
-  [19.2914358, -99.5009372]
+  [19.291795925, -99.50094135], // Superior izquierda
+  [19.291795925, -99.50088135], // Superior derecha
+  [19.291435925, -99.50088135], // Inferior derecha
+  [19.291435925, -99.50094135]  // Inferior izquierda
 ], {
   color: '#228B22', // Borde verde oscuro
   fillColor: '#32CD32', // Verde claro
-  fillOpacity: 0.6,
-  weight: 2
+  fillOpacity: 0.7, // Aumentamos opacidad para mejor visibilidad
+  weight: 3, // Borde más definido
+  dashArray: '5, 5' // Línea discontinua para un estilo moderno
 }).addTo(map);
+
 jardinHI.bindPopup(`
-  <b>Área verde entre los edifico H-I </b><br>
-   Espacio para partidos jugar ajedrez.<br>
-  - <b>Actividades:</b> Torneos internos, convivencias.<br>
-  - <b>Horario:</b> Consultar área deportiva.<br>
-  - <b>Etiquetas OSM:</b> leisure=pitch, sport=basketball;volleyball
+  <b>Área verde entre los edificios H-I</b><br>
+  🌳 Espacio para actividades al aire libre y descanso.<br>
+  - <b>Actividades:</b> Convivencias, eventos culturales.<br>
+  - <b>Horario:</b> Abierto durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=park
 `);
 
-//Zona V
+// Jardín D-E
+const jardinDE = L.polygon([
+  [19.29170845, -99.501464925], // Top-left
+  [19.29170845, -99.501374925], // Top-right
+  [19.29141845, -99.501374925], // Bottom-right
+  [19.29141845, -99.501464925]  // Bottom-left
+], {
+  color: '#228B22', // Dark green border
+  fillColor: '#32CD32', // Light green fill
+  fillOpacity: 0.7, // Increased opacity for better visibility
+  weight: 3, // Thicker border
+  dashArray: '5, 5' // Dashed border for modern style
+}).addTo(map);
 
+jardinDE.bindPopup(`
+  <b>Área verde entre los edificios D-E</b><br>
+  🌳 Espacio para actividades al aire libre y descanso.<br>
+  - <b>Actividades:</b> Convivencias, eventos culturales.<br>
+  - <b>Horario:</b> Abierto durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=park
+`);
 
+// Zona V
 const zonaV = L.polygon([
   [19.2911543, -99.4975112],
   [19.2881778, -99.4976109],
   [19.2882031, -99.4948563],
-  [19.2911467, -99.4948986],
+  [19.2911467, -99.4948563],
   [19.2911543, -99.4975112]
 ], {
   color: '#228B22', // Borde verde oscuro
   fillColor: '#32CD32', // Verde claro
   fillOpacity: 0.6,
-  weight: 2
+  weight: 2,
+  dashArray: '5, 5' // Línea punteada para un estilo moderno
 }).addTo(map);
+
 zonaV.bindPopup(`
   <b>Zona de serpientes</b><br>
-   Área verde restringida por que alberga fauna silvestre, en especial serpientes.<br>
+   Área verde restringida porque alberga fauna silvestre, en especial serpientes.<br>
   - <b>Actividades:</b> Ninguna.<br>
-  - <b>Horario:</b> Previa solicitud
-   en en J1.
+  - <b>Horario:</b> Previa solicitud en J1.<br>
+  - <b>Etiquetas OSM:</b> leisure=nature_reserve, access=restricted
 `);
 
 
@@ -212,7 +229,7 @@ L.control.scale({ metric: true, imperial: false }).addTo(map);
 // Control de capas
 const overlayMaps = {
   "Cancha de Fútbol": canchaFutbol,
-  "Edificio P (Rectoría)": edificioP,
+  //"Edificio P (Rectoría)": edificioP,
   "Cancha de Deportes": canchaDeportes,
   "Estacionamiento": estacionamiento,
   "Biblioteca": bibliotecaMarker,
@@ -221,5 +238,6 @@ const overlayMaps = {
   "Jardín de Ajedrez": jardinAjedrez,
   "Jardín I-J": jardinIJ,
   "Jadín H-I": jardinHI,
+  "Jardín D-E": jardinDE,
 };
 L.control.layers({}, overlayMaps).addTo(map);
