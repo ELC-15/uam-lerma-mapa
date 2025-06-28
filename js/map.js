@@ -191,7 +191,7 @@ zonaV.bindPopup(`
 `);
 
 
-// Estacionamiento
+/* Estacionamiento
 const estacionamiento = L.polygon([
   [19.2918518, -99.5019823],
   [19.2918638, -99.5011461],
@@ -212,6 +212,87 @@ const estacionamiento = L.polygon([
   weight: 2
 }).addTo(map);
 estacionamiento.bindPopup("<b>Estacionamiento</b><br>Área para vehículos de estudiantes y personal.");
+*/
+
+//Jardín Kiosko
+
+
+const jardinKiosko = L.polygon([
+  [19.2918654, -99.5015664],
+  [19.2918663, -99.5011213],
+  [19.2918344, -99.5011203],
+  [19.2918380, -99.5012926],
+  [19.2918143, -99.5012926],
+  [19.2918161, -99.5015674],
+  [19.2918654, -99.5015664]
+  
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2,
+  dashArray: '5, 5' // Línea punteada para un estilo moderno
+}).addTo(map);
+jardinKiosko.bindPopup(`
+  <b>Área verde frente al kiosko </b><br>
+  🌳 Espacio para actividades al aire libre y descanso.<br>
+  - <b>Actividades:</b> Convivencias, eventos culturales.<br>
+  - <b>Horario:</b> Abierto durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=park
+`);
+
+//Jardín SUM
+
+
+const jardinSUM = L.polygon([
+  [19.2918657, -99.5010984],
+  [19.2919009, -99.5010206],
+  [19.2918898, -99.5005167],
+  [19.2918280, -99.5005188],
+  [19.2918395, -99.5010989],
+  [19.2918657, -99.5010984]
+  
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2,
+  dashArray: '5, 5' // Línea punteada para un estilo moderno
+}).addTo(map);
+jardinSUM.bindPopup(`
+  <b>Área verde SUM</b><br>
+  🌳 Espacio para actividades al aire libre y descanso.<br>
+  - <b>Actividades:</b> Convivencias, eventos culturales.<br>
+  - <b>Horario:</b> Abierto durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=park
+`);
+
+
+//Jardín M
+
+
+const jardinM = L.polygon([
+  [19.2918938, -99.5004717],
+  [19.2918830, -99.4998216],
+  [19.2918253, -99.4998234],
+  [19.2918179, -99.5004765],
+  [19.2918179, -99.5004765],
+  [19.2918938, -99.5004717]
+  
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2,
+  dashArray: '5, 5' // Línea punteada para un estilo moderno
+}).addTo(map);
+jardinM.bindPopup(`
+  <b>Área verde M</b><br>
+  🌳 Espacio para actividades al aire libre y descanso.<br>
+  - <b>Actividades:</b> Convivencias, eventos culturales.<br>
+  - <b>Horario:</b> Abierto durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=park
+`);
 
 // Marcadores
 const bibliotecaMarker = L.marker([19.2913159, -99.5006254]).addTo(map);
@@ -231,13 +312,17 @@ const overlayMaps = {
   "Cancha de Fútbol": canchaFutbol,
   //"Edificio P (Rectoría)": edificioP,
   "Cancha de Deportes": canchaDeportes,
-  "Estacionamiento": estacionamiento,
+  //"Estacionamiento": estacionamiento,
   "Biblioteca": bibliotecaMarker,
   "Comedor": comedorMarker,
   "Acceso Principal": accesoPrincipal,
   "Jardín de Ajedrez": jardinAjedrez,
   "Jardín I-J": jardinIJ,
-  "Jadín H-I": jardinHI,
+  "Jardín H-I": jardinHI,
   "Jardín D-E": jardinDE,
+  "Jardín Kiosko": jardinKiosko,
+  "Jardín SUM": jardinSUM,
+  "Jardín M": jardinM,
+
 };
 L.control.layers({}, overlayMaps).addTo(map);
