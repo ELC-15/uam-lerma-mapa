@@ -1,4 +1,4 @@
-const map = L.map('map').setView([19.29153, -99.49959], 17);
+const map = L.map('map').setView([19.29153, -99.49959], 18);
 
 // Añadir capa base de OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -294,6 +294,170 @@ jardinM.bindPopup(`
   - <b>Etiquetas OSM:</b> leisure=park
 `);
 
+//Jardín O1
+
+
+const jardinO1 = L.polygon([
+  [19.2924530, -99.4975804],
+  [19.2924498, -99.4974648],
+  [19.2923420, -99.4975824],
+  [19.2924530, -99.4975804]
+  
+  
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2,
+  dashArray: '5, 5' // Línea punteada para un estilo moderno
+}).addTo(map);
+jardinO1.bindPopup(`
+  <b>Jardín Polinizador 1/4</b><br>
+  🌼 Espacio diseñado para atraer y proteger a polinizadores como abejas y mariposas.<br>
+  - <b>Ubicación:</b> Edificio O, UAM Lerma.<br>
+  - <b>Función:</b> Conservación de la biodiversidad y educación ambiental.<br>
+  - <b>Horario:</b> Acceso durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=garden, garden:type=botanical
+`);
+
+//Jardín O2
+
+
+const jardinO2 = L.polygon([
+  [19.2924469, -99.4973162],
+  [19.2924464, -99.4971962],
+  [19.2924131, -99.4971974],
+  [19.2924153, -99.4973174],
+  [19.2924469, -99.4973162]
+  
+  
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2,
+  dashArray: '5, 5' // Línea punteada para un estilo moderno
+}).addTo(map);
+jardinO2.bindPopup(`
+  <b>Jardín Polinizador 2/4</b><br>
+  🌼 Espacio dedicado a especies nativas que favorecen la polinización.<br>
+  - <b>Ubicación:</b> Edificio O, UAM Lerma.<br>
+  - <b>Función:</b> Apoyo a polinizadores y fortalecimiento ecológico del campus.<br>
+  - <b>Horario:</b> Acceso durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=garden, garden:type=botanical
+`);
+
+//Jardín O3
+
+
+const jardinO3 = L.polygon([
+  [19.2924458, -99.4971727],
+  [19.2924447, -99.4970633],
+  [19.2924092, -99.4970621],
+  [19.2924109, -99.4971721],
+  [19.2924458, -99.4971727]
+  
+  
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2,
+  dashArray: '5, 5' // Línea punteada para un estilo moderno
+}).addTo(map);
+jardinO3.bindPopup(`
+  <b>Jardín Polinizador 3/4</b><br>
+  🌼 Área con plantas melíferas que atraen insectos polinizadores.<br>
+  - <b>Ubicación:</b> Edificio O, UAM Lerma.<br>
+  - <b>Función:</b> Promover la conciencia ambiental y apoyar la polinización natural.<br>
+  - <b>Horario:</b> Acceso durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=garden, garden:type=botanical
+`);
+
+//Jardín O4
+
+
+const jardinO4 = L.polygon([
+  [19.2924453, -99.4970017],
+  [19.2924430, -99.4968197],
+  [19.2923980, -99.4967760],
+  [19.2923323, -99.4968472],
+  [19.2924140, -99.4969272],
+  [19.2924155, -99.4970017],
+  [19.2924453, -99.4970017]
+  
+  
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2,
+  dashArray: '5, 5' // Línea punteada para un estilo moderno
+}).addTo(map);
+jardinO4.bindPopup(`
+  <b>Jardín Polinizador 4/4</b><br>
+  🌼 Zona de vegetación nativa que apoya la presencia de polinizadores.<br>
+  - <b>Ubicación:</b> Edificio O, UAM Lerma.<br>
+  - <b>Función:</b> Refugio para fauna polinizadora y espacio educativo.<br>
+  - <b>Horario:</b> Acceso durante el día.<br>
+  - <b>Etiquetas OSM:</b> leisure=garden, garden:type=botanical
+`);
+
+//Matorrales OP
+
+const matorralesOP = L.polygon([
+  [19.2922182, -99.4961194], //1
+  [19.2922142, -99.4959953], //2
+  [19.2921894, -99.4959940], //3
+  [19.2921834, -99.4957969], //4
+  [19.2922664, -99.4957957], //5
+  [19.2922664, -99.4957053], //6
+  [19.2919986, -99.4957153], //7
+  [19.2918955, -99.4961572], //8
+  [19.2918339, -99.4964058], //9
+  [19.2918066, -99.4968740], //10
+  [19.2918457, -99.4970008], //11
+  [19.2919642, -99.4968778], //12
+  [19.2919275, -99.4968364], //13
+  [19.2920981, -99.4966569], //14
+  [19.2921360, -99.4966933], //15
+  [19.2922403, -99.4965840], //16
+  [19.2922711, -99.4966167], //17
+  [19.2921668, -99.4967272], //18
+  [19.2922024, -99.4967661], //19
+  [19.2920412, -99.4969418], //20
+  [19.2920045, -99.4969067], //21
+  [19.2918647, -99.4970573], //22
+  [19.2918647, -99.4970573], //23 (repetido)
+  [19.2918694, -99.4973184], //24
+  [19.2924405, -99.4967067], //25
+  [19.2924340, -99.4962248], //26
+  [19.2922936, -99.4962288], //27
+  [19.2922972, -99.4962840], //28
+  [19.2921526, -99.4962865], //29
+  [19.2921574, -99.4964572], //30
+  [19.2921100, -99.4964572], //31
+  [19.2921100, -99.4962903], //32
+  [19.2920436, -99.4962928], //33
+  [19.2920460, -99.4961258]  //34
+], {
+  color: '#556B2F', // Borde verde oliva
+  fillColor: '#6B8E23', // Verde musgo
+  fillOpacity: 0.5,
+  weight: 2,
+  dashArray: '4, 4' // Estilo punteado más sutil
+}).addTo(map);
+
+matorralesOP.bindPopup(`
+  <b>Matorrales Edificios OP</b><br>
+  🌿 Área de vegetación baja que sirve de hábitat para insectos y aves.<br>
+  - <b>Ubicación:</b> Alrededor de los edificios OP, UAM Lerma.<br>
+  - <b>Función:</b> Conservación ecológica y mejora del paisaje natural.<br>
+  - <b>Horario:</b> Acceso durante el día.<br>
+  - <b>Etiquetas OSM:</b> natural=scrub
+`);
+
+
 // Marcadores
 const bibliotecaMarker = L.marker([19.2913159, -99.5006254]).addTo(map);
 bibliotecaMarker.bindPopup("<b>Biblioteca</b><br>Préstamo de libros y laptops.");
@@ -323,6 +487,10 @@ const overlayMaps = {
   "Jardín Kiosko": jardinKiosko,
   "Jardín SUM": jardinSUM,
   "Jardín M": jardinM,
+  "Jardín O1": jardinO1,
+  "Jardín O2": jardinO2,
+  "Jardín O3": jardinO3,
+  "Matorrales OP": matorralesOP
 
 };
 L.control.layers({}, overlayMaps).addTo(map);
