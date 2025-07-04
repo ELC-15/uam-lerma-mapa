@@ -294,6 +294,33 @@ jardinM.bindPopup(`
   - <b>Etiquetas OSM:</b> leisure=park
 `);
 
+// Área de pasto frente a la cancha de fútbol
+
+const areaPastoCancha = L.polygon([
+  [19.2918825, -99.4997856], //1
+  [19.2918788, -99.4993209], //2
+  [19.2918120, -99.4993204], //3
+  [19.2918176, -99.4997863], //4
+  [19.2918825, -99.4997856]  //5 (cierra el polígono)
+], {
+  color: '#228B22', // Borde verde oscuro
+  fillColor: '#32CD32', // Verde claro
+  fillOpacity: 0.6,
+  weight: 2,
+  dashArray: '5, 5' // Línea punteada para un estilo moderno
+}).addTo(map);
+
+areaPastoCancha.bindPopup(`
+  <b>Área de pasto</b><br>
+  🍃 Zona cubierta de césped frente a la cancha de fútbol.<br>
+  - <b>Ubicación:</b> UAM Lerma.<br>
+  - <b>Uso:</b> Área verde abierta para esparcimiento.<br>
+  - <b>Horario:</b> Acceso libre durante el día.<br>
+  - <b>Etiqueta OSM:</b> landuse=grass
+`);
+
+
+
 //Jardín O1
 
 
@@ -457,6 +484,38 @@ matorralesOP.bindPopup(`
   - <b>Etiquetas OSM:</b> natural=scrub
 `);
 
+//Matorrales OP2
+
+
+const matorralesOP2 = L.polygon([
+  [19.2924275, -99.4961793], //1
+  [19.2924231, -99.4956991], //2
+  [19.2923023, -99.4957038], //3
+  [19.2923085, -99.4957963], //4
+  [19.2923332, -99.4957963], //5
+  [19.2923385, -99.4960018], //6
+  [19.2922485, -99.4960009], //7
+  [19.2922512, -99.4961214], // 8
+  [19.2922882, -99.4961205], // 9
+  [19.2922909, -99.4961784], // 10
+  [19.2924275, -99.4961793] // 11
+  
+], {
+  color: '#556B2F',       // Verde oliva (como matorralesOP)
+  fillColor: '#6B8E23',   // Verde musgo
+  fillOpacity: 0.5,
+  weight: 2,
+  dashArray: '4, 4'       // Estilo punteado sutil
+}).addTo(map);
+matorralesOP2.bindPopup(`
+  <b>Matorrales Edificios OP</b><br>
+  🌿 Área de vegetación baja que sirve de hábitat para insectos y aves.<br>
+  - <b>Ubicación:</b> Alrededor de los edificios OP, UAM Lerma.<br>
+  - <b>Función:</b> Conservación ecológica y mejora del paisaje natural.<br>
+  - <b>Horario:</b> Acceso durante el día.<br>
+  - <b>Etiquetas OSM:</b> natural=scrub
+`);
+
 
 // Marcadores
 const bibliotecaMarker = L.marker([19.2913159, -99.5006254]).addTo(map);
@@ -490,7 +549,8 @@ const overlayMaps = {
   "Jardín O1": jardinO1,
   "Jardín O2": jardinO2,
   "Jardín O3": jardinO3,
-  "Matorrales OP": matorralesOP
+  "Matorrales OP": matorralesOP,
+  "Matorrales OP2": matorralesOP2
 
 };
 L.control.layers({}, overlayMaps).addTo(map);
